@@ -12,13 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
     todoList.innerHTML = '';
     todos.forEach((todo, index) => {
       const todoItem = document.createElement('li');
-      todoItem.className = 'flex items-center justify-between p-3 border rounded';
+      todoItem.className = 'flex items-center justify-between px-3 cursor-pointer   ';
       todoItem.innerHTML = `
-        <div class="flex-grow">
-          <h3 class="text-lg font-semibold">${todo.title || ''}</h3>
-          <p>${todo.content}</p>
+        <div class="flex-grow ">
+          <h3 class="text-lg font-semibold ">${todo.title || ''}</h3>
+          <p class="  text-gray-500 pr-4 py-1">${todo.content}</p>
+          <hr class="mt-3"></hr>
         </div>
-        <button data-index="${index}" class="text-red-500 hover:text-red-700 focus:outline-none delete-btn">Delete</button>
+        <button data-index="${index}" class="text-red-500 hover:text-red-700 focus:outline-none delete-btn">&#x2612;</button>
       `;
       todoList.appendChild(todoItem);
     });
